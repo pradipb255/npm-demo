@@ -1,8 +1,43 @@
 import { DataTypes, Model, InitOptions } from "sequelize";
 
 class User extends Model {
-  public static initialize(sequelize) {
-    this.init(
+  public id!: number;
+  public uuid!: string;
+  public allotted_phone!: bigint;
+  public first_name!: Text;
+  public second_name!: Text;
+  public active!: number;
+
+  public joining_date!: Date;
+  public activation_date!: Date;
+  public is_manager!: number;
+  public profile_step!: number;
+  public cluster_id!: number;
+  public city!: number;
+  public state!: number;
+  public referral_code!: string;
+  public otp!: number;
+  public device_id!: Text;
+  public firebase_token!: Text;
+  public fcm_token!: Text;
+  public address!: string;
+  public latitude!: number;
+  public longitude!: number;
+  public is_major!: boolean;
+  public gender!: number;
+  public preferred_vertical_id!: number;
+  public have_vehicle!: boolean;
+  public vehicle_id!: number;
+  public profile_img!: string;
+  public dial_code!: string;
+  public is_online!: boolean;
+  public platform!: string;
+  public selfie!: string;
+  public ref_join!: number;
+  public is_busy!: boolean;
+
+  public initialize(sequelize) {
+    User.init(
       {
         id: {
           type: DataTypes.INTEGER,
@@ -125,4 +160,4 @@ class User extends Model {
   }
 }
 
-export default User;
+export default new User();
